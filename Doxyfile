@@ -5,14 +5,18 @@ PROJECT_NAME           = "itester .NET API"
 PROJECT_BRIEF          = "API reference for the four-operation calculator"
 OUTPUT_DIRECTORY       = docs/doxygen
 
-INPUT                  = Program.cs
+# Scan every C# source file, including future source subdirectories.
+INPUT                  = .
 FILE_PATTERNS          = *.cs
-RECURSIVE              = NO
+RECURSIVE              = YES
+EXCLUDE                = docs/doxygen
 
+# Include namespaces, classes, and all members (including static methods).
 OPTIMIZE_OUTPUT_JAVA   = YES
 EXTRACT_ALL            = YES
 EXTRACT_PRIVATE        = NO
 EXTRACT_STATIC         = YES
+SHOW_NAMESPACES        = YES
 
 SOURCE_BROWSER         = YES
 INLINE_SOURCES         = NO
@@ -20,6 +24,7 @@ REFERENCES_RELATION    = NO
 
 GENERATE_HTML          = YES
 HTML_OUTPUT            = html
+GENERATE_TREEVIEW      = YES
 GENERATE_LATEX         = NO
 GENERATE_XML           = YES
 XML_OUTPUT             = xml
