@@ -1,0 +1,100 @@
+/* Dark, high-contrast tech theme for generated Doxygen HTML. */
+:root {
+  color-scheme: dark;
+  --tech-bg: #0b1020;
+  --tech-panel: #111a2e;
+  --tech-panel-raised: #17243b;
+  --tech-border: #263752;
+  --tech-text: #d7e3f4;
+  --tech-muted: #93a8c4;
+  --tech-cyan: #50d7f5;
+  --tech-blue: #7aa7ff;
+  --tech-green: #69e6b1;
+}
+
+html, body {
+  background: var(--tech-bg);
+  color: var(--tech-text);
+}
+
+body, table, div, p, dl {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+#titlearea, .header, .headertitle, .tabs, .tablist {
+  background: var(--tech-panel) !important;
+  border-color: var(--tech-border) !important;
+}
+
+#titlearea {
+  border-bottom: 1px solid var(--tech-border);
+}
+
+#projectname, .title, .headertitle .title {
+  color: var(--tech-cyan) !important;
+  font-weight: 650;
+  letter-spacing: 0.025em;
+}
+
+.contents, .textblock, .memdoc, .doc, .directory {
+  color: var(--tech-text);
+}
+
+.contents a, a, .el, .elRef {
+  color: var(--tech-cyan);
+}
+
+.contents a:hover, a:hover {
+  color: var(--tech-green);
+  text-decoration: underline;
+}
+
+.navpath, .navpath ul, .navpath li {
+  background: var(--tech-panel) !important;
+  border-color: var(--tech-border) !important;
+}
+
+.memtitle, .memitem, .memberdecls, .fieldtable, .directory tr {
+  background: var(--tech-panel) !important;
+  border-color: var(--tech-border) !important;
+}
+
+.memtitle {
+  color: var(--tech-blue) !important;
+}
+
+.memname, .paramname, .mlabel {
+  color: var(--tech-green) !important;
+}
+
+.fragment, pre.fragment, div.line, .line, .code {
+  background: #080d18 !important;
+  color: #c9d8ee !important;
+  border-color: var(--tech-border) !important;
+}
+
+.contents table, .memberdecls, .fieldtable {
+  border-color: var(--tech-border) !important;
+}
+
+.contents th, .fieldtable th {
+  background: var(--tech-panel-raised) !important;
+  color: var(--tech-cyan) !important;
+}
+
+.contents td, .fieldtable td {
+  border-color: var(--tech-border) !important;
+}
+
+hr, .contents hr {
+  border-color: var(--tech-border);
+}
+
+#nav-tree, #nav-tree-contents, .item {
+  background: var(--tech-panel) !important;
+  color: var(--tech-text) !important;
+}
+
+#nav-tree .selected {
+  background: var(--tech-panel-raised) !important;
+}
