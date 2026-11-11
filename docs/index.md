@@ -1,11 +1,12 @@
 # Documentation Index
 
-This project contains a minimal documentation set for the calculator.
+This project contains guides and generated API documentation for the calculator.
 
 ## Available guides
 
 - [Tutorial](tutorial.md) — how to run and use the calculator
 - [API Reference](api-reference.md) — reference for the `Calculator` class and its methods
+- [Doxygen API docs](doxygen.md) — generate the browsable .NET API reference
 
 ## Quick start
 

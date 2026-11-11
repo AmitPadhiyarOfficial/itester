@@ -18,4 +18,7 @@ Enter expressions with spaces, for example `12 + 3.5`, `8 / 2`, or type `q` to e
 
 - [Tutorial](docs/tutorial.md)
 - [API Reference](docs/api-reference.md)
+- [Doxygen API documentation setup](docs/doxygen.md)
 - [Docs Index](docs/index.md)
+
+Generate the browsable Doxygen API site with `doxygen Doxyfile`; its entry point is `docs/doxygen/html/index.html`.
