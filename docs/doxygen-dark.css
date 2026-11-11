@@ -1,100 +1,114 @@
-/* Dark, high-contrast tech theme for generated Doxygen HTML. */
+/* Black Neon theme for generated Doxygen HTML */
 :root {
   color-scheme: dark;
-  --tech-bg: #0b1020;
-  --tech-panel: #111a2e;
-  --tech-panel-raised: #17243b;
-  --tech-border: #263752;
-  --tech-text: #d7e3f4;
-  --tech-muted: #93a8c4;
-  --tech-cyan: #50d7f5;
-  --tech-blue: #7aa7ff;
-  --tech-green: #69e6b1;
+  --bg: #05070b;
+  --bg-alt: #0c1018;
+  --panel: #0f1724;
+  --panel-2: #111c2c;
+  --border: #1f2f3f;
+  --text: #eaf6ff;
+  --muted: #99afc6;
+  --cyan: #3de4ff;
+  --blue: #6ea8ff;
+  --green: #74f5af;
+  --pink: #ff4fd8;
+  --shadow: rgba(61, 228, 255, 0.35);
 }
 
 html, body {
-  background: var(--tech-bg);
-  color: var(--tech-text);
+  background: var(--bg);
+  color: var(--text);
+  background-image: radial-gradient(circle at top, rgba(61, 228, 255, 0.08), transparent 35%),
+                    linear-gradient(180deg, #04070d 0%, #090d15 100%);
 }
 
-body, table, div, p, dl {
-  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+body, table, div, p, dl, input, textarea, select {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#titlearea, .header, .headertitle, .tabs, .tablist {
-  background: var(--tech-panel) !important;
-  border-color: var(--tech-border) !important;
-}
-
-#titlearea {
-  border-bottom: 1px solid var(--tech-border);
+#titlearea, .header, .headertitle, .tabs, .tablist, .navpath {
+  background: rgba(15, 23, 36, 0.9) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: 0 0 18px rgba(61, 228, 255, 0.08);
 }
 
 #projectname, .title, .headertitle .title {
-  color: var(--tech-cyan) !important;
-  font-weight: 650;
-  letter-spacing: 0.025em;
+  color: var(--cyan) !important;
+  text-shadow: 0 0 12px rgba(61, 228, 255, 0.7);
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
-.contents, .textblock, .memdoc, .doc, .directory {
-  color: var(--tech-text);
+div.contents, .textblock, .memdoc, .doc, .directory, .directory tr, .directory td, .directory th,
+#nav-tree, #nav-tree-contents, .item, #nav-tree .item {
+  background: transparent !important;
+  color: var(--text) !important;
 }
 
-.contents a, a, .el, .elRef {
-  color: var(--tech-cyan);
+.contents a, a, .el, .elRef, .fragment a {
+  color: var(--cyan) !important;
+  text-decoration: none;
 }
 
 .contents a:hover, a:hover {
-  color: var(--tech-green);
-  text-decoration: underline;
+  color: var(--green) !important;
+  text-shadow: 0 0 8px rgba(116, 245, 175, 0.7);
 }
 
-.navpath, .navpath ul, .navpath li {
-  background: var(--tech-panel) !important;
-  border-color: var(--tech-border) !important;
-}
-
-.memtitle, .memitem, .memberdecls, .fieldtable, .directory tr {
-  background: var(--tech-panel) !important;
-  border-color: var(--tech-border) !important;
+.memtitle, .memitem, .memberdecls, .fieldtable, .directory tr, .directory td {
+  background: rgba(17, 28, 44, 0.9) !important;
+  border-color: var(--border) !important;
 }
 
 .memtitle {
-  color: var(--tech-blue) !important;
+  color: var(--pink) !important;
+  text-shadow: 0 0 10px rgba(255, 79, 216, 0.6);
 }
 
-.memname, .paramname, .mlabel {
-  color: var(--tech-green) !important;
+.memname, .paramname, .mlabel, .mdescRight {
+  color: var(--green) !important;
 }
 
 .fragment, pre.fragment, div.line, .line, .code {
-  background: #080d18 !important;
-  color: #c9d8ee !important;
-  border-color: var(--tech-border) !important;
+  background: #03070d !important;
+  color: #dffbff !important;
+  border: 1px solid rgba(61, 228, 255, 0.16) !important;
+  box-shadow: inset 0 0 12px rgba(61, 228, 255, 0.06);
 }
 
-.contents table, .memberdecls, .fieldtable {
-  border-color: var(--tech-border) !important;
+.contents table, .memberdecls, .fieldtable, .directory table {
+  border-color: var(--border) !important;
 }
 
 .contents th, .fieldtable th {
-  background: var(--tech-panel-raised) !important;
-  color: var(--tech-cyan) !important;
+  background: var(--panel-2) !important;
+  color: var(--cyan) !important;
+  border-color: var(--border) !important;
 }
 
 .contents td, .fieldtable td {
-  border-color: var(--tech-border) !important;
+  border-color: var(--border) !important;
+  background: rgba(11, 18, 26, 0.75) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--cyan) !important;
+  text-shadow: 0 0 10px rgba(61, 228, 255, 0.5);
 }
 
 hr, .contents hr {
-  border-color: var(--tech-border);
+  border-color: var(--border);
 }
 
-#nav-tree, #nav-tree-contents, .item {
-  background: var(--tech-panel) !important;
-  color: var(--tech-text) !important;
+#nav-tree {
+  background: rgba(8, 12, 18, 0.9) !important;
 }
 
 #nav-tree .selected {
-  background: var(--tech-panel-raised) !important;
+  background: rgba(61, 228, 255, 0.12) !important;
+  box-shadow: inset 0 0 0 1px rgba(61, 228, 255, 0.15);
+}
+
+code {
+  color: var(--cyan);
 }

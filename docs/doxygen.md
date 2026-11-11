@@ -16,4 +16,4 @@ doxygen Doxyfile
 
 The generated HTML site is written to `docs/doxygen/html/`. Open `docs/doxygen/html/index.html` in a browser. Doxygen also emits XML output in `docs/doxygen/xml/` for tooling that consumes XML documentation.
 
-The HTML uses Doxygen's dark color palette with a custom dark, high-contrast tech stylesheet from `docs/doxygen-dark.css`. The configuration scans all `*.cs` files recursively, so API types added in subdirectories are included automatically.
+The HTML uses a custom black-neon theme defined in `docs/doxygen-dark.css`. The configuration scans all `*.cs` files recursively, so API types added in subdirectories are included automatically.
