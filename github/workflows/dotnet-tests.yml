@@ -1,0 +1,47 @@
+name: .NET tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Run MSTest suite
+        run: dotnet test tests/itester.Tests/itester.Tests.csproj --configuration Release --logger "trx;LogFileName=test-results.trx"
+
+      - name: Add test summary to workflow run
+        if: always()
+        shell: pwsh
+        run: |
+          $results = Get-ChildItem -Path . -Filter test-results.trx -Recurse -ErrorAction SilentlyContinue
+          if (-not $results) {
+            "## MSTest results`n`nNo TRX results file was produced." >> $env:GITHUB_STEP_SUMMARY
+            exit 0
+          }
+
+          [xml]$trx = Get-Content $results[0].FullName
+          $counters = $trx.TestRun.ResultSummary.Counters
+          "## MSTest results`n`n- Passed: $($counters.passed)`n- Failed: $($counters.failed)`n- Total: $($counters.total)`n" >> $env:GITHUB_STEP_SUMMARY
+
+      - name: Upload detailed test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mstest-results
+          path: '**/test-results.trx'
+          if-no-files-found: ignore
